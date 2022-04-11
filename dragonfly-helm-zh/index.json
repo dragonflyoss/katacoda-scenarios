@@ -1,0 +1,59 @@
+{
+  "title": "Dragonfly 使用 helm 安装教程",
+  "description": "Dragonfly 使用 helm 安装教程",
+  "difficulty": "Beginner",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "初始化 Kubernetes 集群",
+        "text": "step1.md"
+      },
+      {
+        "title": "使用 helm 安装 Dragonfly",
+        "text": "step2.md"
+      },
+      {
+        "title": "通过 Dfdaemon 拉取镜像",
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "values.yaml",
+          "target": "/root/"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "Manager Console UI",
+        "href": "https://[[HOST_SUBDOMAIN]]-31234-[[KATACODA_HOST]].environments.katacoda.com"
+      }
+    ],
+    "terminals": [
+      {
+        "name": "Terminal 2",
+        "command": "echo Hello",
+        "target": "host01"
+      }
+    ],
+    "hideHiddenFiles": true,
+    "uisettings": "yaml",
+    "uieditorpath": "/root/",
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "minikube"
+  }
+}

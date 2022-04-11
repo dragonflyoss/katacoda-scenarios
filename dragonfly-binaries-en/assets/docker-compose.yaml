@@ -1,0 +1,43 @@
+version: "3"
+services:
+  redis:
+    image: redis:6-alpine
+    container_name: redis
+    network_mode: host
+    command: >
+      --requirepass dragonfly
+    restart: always
+    healthcheck:
+      test: ["CMD", "redis-cli","-a","dragonfly","ping"]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+
+  mysql:
+    image: mariadb:10.6
+    container_name: mysql
+    network_mode: host
+    environment:
+      - MARIADB_USER=dragonfly
+      - MARIADB_PASSWORD=dragonfly
+      - MARIADB_DATABASE=manager
+      - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=yes
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin status"]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    network_mode: host
+    restart: always
+    volumes:
+      - /root/nginx-file-server.conf:/etc/nginx/conf.d/nginx-file-server.conf:ro
+      - /tmp/cdn:/tmp/cdn
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 8001 || exit 1"]
+      interval: 1s
+      timeout: 3s
+      retries: 30

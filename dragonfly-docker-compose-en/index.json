@@ -1,0 +1,44 @@
+{
+  "title": "Dragonfly Docker Compose guide",
+  "description": "Dragonfly Docker Compose guide",
+  "difficulty": "Beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Clone and Startup Dragonfly",
+        "text": "step1.md"
+      },
+      {
+        "title": "Pull images by Dfdaemon",
+        "text": "step2.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "Manager Console UI",
+        "href": "https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com"
+      }
+    ],
+    "terminals": [
+      {
+        "name": "Terminal 2",
+        "command": "echo Hello",
+        "target": "host01"
+      }
+    ],
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu:2004"
+  }
+}
