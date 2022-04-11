@@ -1,0 +1,76 @@
+{
+  "title": "Dragonfly 使用二进制安装教程",
+  "description": "Dragonfly 使用二进制安装教程",
+  "difficulty": "Beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "初始化环境",
+        "text": "step1.md"
+      },
+      {
+        "title": "下载二进制文件并启动Dragonfly",
+        "text": "step2.md"
+      },
+      {
+        "title": "通过 Dfdaemon 拉取镜像",
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "template/cdn.template.yaml",
+          "target": "/root/template/"
+        },
+        {
+          "file": "template/dfget.template.yaml",
+          "target": "/root/template/"
+        },
+        {
+          "file": "template/manager.template.yaml",
+          "target": "/root/template/"
+        },
+        {
+          "file": "template/scheduler.template.yaml",
+          "target": "/root/template/"
+        },
+        {
+          "file": "docker-compose.yaml",
+          "target": "/root/"
+        },
+        {
+          "file": "nginx-file-server.conf",
+          "target": "/root/"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "Manager Console UI",
+        "href": "https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com"
+      }
+    ],
+    "terminals": [
+      {
+        "name": "Terminal 2",
+        "command": "echo Hello",
+        "target": "host01"
+      }
+    ],
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu:2004"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "title": "Dragonfly helm charts guide",
+  "description": "Dragonfly helm charts guide",
+  "difficulty": "Beginner",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Initializing Kubernetes",
+        "text": "step1.md"
+      },
+      {
+        "title": "Install Dragonfly by helm",
+        "text": "step2.md"
+      },
+      {
+        "title": "Pull images by dfdaemon",
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "values.yaml",
+          "target": "/root/"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "Manager Console UI",
+        "href": "https://[[HOST_SUBDOMAIN]]-31234-[[KATACODA_HOST]].environments.katacoda.com"
+      }
+    ],
+    "terminals": [
+      {
+        "name": "Terminal 2",
+        "command": "echo Hello",
+        "target": "host01"
+      }
+    ],
+    "hideHiddenFiles": true,
+    "uisettings": "yaml",
+    "uieditorpath": "/root/",
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "minikube"
+  }
+}
