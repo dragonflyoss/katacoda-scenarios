@@ -1,12 +1,11 @@
-# katacoda-scenarios
+# Interactive Katacoda Scenarios
 
-Katacoda Scenarios for Dragonfly.
+[![Katacoda](http://shields.katacoda.com/katacoda/d7y/count.svg)](https://www.katacoda.com/d7y/)
 
-## Guide of Dragonfly by katacoda
+Visit [katacoda/d7y](https://www.katacoda.com/d7y/) to view the profile and interactive scenarios.
 
-- [English of guide of install Dragonfly by helm](./dragonfly-helm-en)
-- [使用 helm 安装 Dragonfly 中文教程](./dragonfly-helm-zh)
-- [English of guide of install Dragonfly by Docker Compose](./dragonfly-docker-compose-en)
-- [使用 Docker Compose 安装 Dragonfly 中文教程](./dragonfly-docker-compose-zh)
-- [English of guide of install Dragonfly by binaries](./dragonfly-binaries-en)
-- [使用 预编译二进制 安装 Dragonfly 中文教程](./dragonfly-binaries-zh)
+## Writing Scenarios
+
+Visit [katacoda document](https://www.katacoda.com/docs/) to learn more about creating Katacoda scenarios.
+
+For examples, visit [github.com/katacoda/scenario-example](https://github.com/katacoda/scenario-example/).
