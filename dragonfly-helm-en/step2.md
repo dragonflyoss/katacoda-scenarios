@@ -1,7 +1,7 @@
 
 ### Document
 
-[Install Dragonfly by helm charts doc](https://d7y.io/docs/setup/install/helm-charts)
+Official document [Install Dragonfly by helm charts doc](https://d7y.io/docs/setup/install/helm-charts)
 
 ### Install Dragonfly by helm
 

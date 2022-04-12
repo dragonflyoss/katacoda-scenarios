@@ -36,3 +36,5 @@ Restart Docker Service
 ### Startup MySQL Redis Nginx by Docker Compose
 
 `docker-compose up -d `{{execute T1}}
+
+`docker-compose ps `{{execute T1}}

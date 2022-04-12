@@ -1,7 +1,7 @@
 
 ### Document
 
-[Install Dragonfly by binaries](https://d7y.io/docs/setup/install/source)
+Official document [Install Dragonfly by binaries](https://d7y.io/docs/setup/install/source)
 
 ### Download the precompiled binaries
 
@@ -41,17 +41,32 @@ sed "s,__IP__,$ip," template/manager.template.yaml > /etc/dragonfly/manager.yaml
 ### Startup Dragonfly
 
 Startup manager
+
 `chmod +x /opt/dragonfly/manager && nohup /opt/dragonfly/manager &`{{execute T1}}
 
 Startup cdn
+
 `chmod +x /opt/dragonfly/cdn && nohup /opt/dragonfly/cdn &`{{execute T1}}
 
 Startup scheduler
+
 `chmod +x /opt/dragonfly/scheduler  && nohup /opt/dragonfly/scheduler &`{{execute T1}}
 
 Startup dfdaemon
+
 `chmod +x /opt/dragonfly/dfget && nohup /opt/dragonfly/dfget daemon &`{{execute T1}}
 
 List of Dragonfly
 
 `ps -ef | grep dragonfly`{{execute T1}}
+
+Should be like
+
+```bash
+$ ps -ef | grep dragonfly
+root        3799    3797  0 00:36 pts/0    00:00:00 /opt/dragonfly/manager
+root        4108    4106  0 00:36 pts/0    00:00:00 /opt/dragonfly/cdn
+root        4372    4370  0 00:36 pts/0    00:00:00 /opt/dragonfly/dfget daemon
+root        5099    5097  0 00:37 pts/0    00:00:00 /opt/dragonfly/scheduler
+root       13741    1146  0 00:39 pts/0    00:00:00 grep --color=auto dragonfly
+```
