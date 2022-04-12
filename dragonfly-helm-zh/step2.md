@@ -1,7 +1,7 @@
 
 ### 文档
 
-官方文档 [使用 helm charts 安装 Dragonfly 文档](https://d7y.io/zh/docs/setup/install/helm-charts/)
+官方文档 [使用 helm charts 安装 Dragonfly](https://d7y.io/zh/docs/setup/install/helm-charts/)
 
 ### 使用 Helm 安装 Dragonfly
 
