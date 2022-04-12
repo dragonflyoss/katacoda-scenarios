@@ -32,4 +32,5 @@ EOF
 ### 启动 MySQL Redis Nginx 服务
 
 `docker-compose up -d `{{execute T1}}
+
 `docker-compose ps `{{execute T1}}
