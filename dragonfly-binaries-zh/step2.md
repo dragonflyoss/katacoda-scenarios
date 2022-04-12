@@ -38,24 +38,6 @@ sed "s,__IP__,$ip," template/scheduler.template.yaml > /etc/dragonfly/scheduler.
 sed "s,__IP__,$ip," template/manager.template.yaml > /etc/dragonfly/manager.yaml
 ```{{execute T1}}
 
-### 编译 Manager Console Web UI
-
-直接复制，快一点
-
-`docker run --entrypoint /bin/sh -it --rm -v /opt/dragonfly/:/tmp dragonflyoss/manager:v2.0.2 -c "mv /opt/dragonfly/manager/console/dist /tmp/"`{{execute T1}}
-
-或者自己编译
-
-`git clone https://github.com/dragonflyoss/console`{{execute T1}}
-
-```sh
-docker run --workdir=/build \
-        --rm -v /root/console/:/build node:12-alpine \
-        sh -c "npm install --loglevel warn --progress false && npm run build"
-```{{execute T1}}
-
-`cp -R /root/console/dist /opt/dragonfly/dist`{{execute T1}}
-
 ### 启动服务
 
 启动 manager
@@ -88,6 +70,24 @@ root        4372    4370  0 00:36 pts/0    00:00:00 /opt/dragonfly/dfget daemon
 root        5099    5097  0 00:37 pts/0    00:00:00 /opt/dragonfly/scheduler
 root       13741    1146  0 00:39 pts/0    00:00:00 grep --color=auto dragonfly
 ```
+
+### 编译 Manager Console Web UI
+
+直接复制，快一点
+
+`docker run --entrypoint /bin/sh -it --rm -v /opt/dragonfly/:/tmp dragonflyoss/manager:v2.0.2 -c "mv /opt/dragonfly/manager/console/dist /tmp/"`{{execute T1}}
+
+或者自己编译
+
+`git clone https://github.com/dragonflyoss/console`{{execute T1}}
+
+```sh
+docker run --workdir=/build \
+        --rm -v /root/console/:/build node:12-alpine \
+        sh -c "npm install --loglevel warn --progress false && npm run build"
+```{{execute T1}}
+
+`cp -R /root/console/dist /opt/dragonfly/dist`{{execute T1}}
 
 ### 访问 Dragonfly Manager Console Web UI
 
