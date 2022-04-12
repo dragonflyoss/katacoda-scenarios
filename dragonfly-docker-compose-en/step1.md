@@ -6,7 +6,7 @@
 
 ### Document
 
-[Install Dragonfly by Docker Compose](https://d7y.io/docs/getting-started/quick-start/docker-compose/)
+Official document [Install Dragonfly by Docker Compose](https://d7y.io/docs/getting-started/quick-start/docker-compose/)
 
 ### Clone Dragonfly repo
 
