@@ -11,7 +11,7 @@ Download a binary package of the cdn. You can download one of the latest builds 
 
 Replace `x.y.z` to real version
 
-e.g. `export version=2.0.2` {{execute T1}}
+e.g. `export version=2.0.2`{{execute T1}}
 
 `wget -O Dragonfly2-linux-amd64.tar.gz https://github.com/dragonflyoss/Dragonfly2/releases/download/v${version}/Dragonfly2-${version}-linux-amd64.tar.gz`{{execute T1}}
 
@@ -37,6 +37,24 @@ sed "s,__IP__,$ip," template/dfget.template.yaml > /etc/dragonfly/dfget.yaml && 
 sed "s,__IP__,$ip," template/scheduler.template.yaml > /etc/dragonfly/scheduler.yaml && \
 sed "s,__IP__,$ip," template/manager.template.yaml > /etc/dragonfly/manager.yaml
 ```{{execute T1}}
+
+### Build Manager Console Web UI
+
+Copy it from dragonflyoss/manager:vx.y.z (replace x.y.z to real version e.g. 2.0.2)
+
+`docker run --entrypoint /bin/sh -it --rm -v /opt/dragonfly/:/tmp dragonflyoss/manager:v2.0.2 -c "mv /opt/dragonfly/manager/console/dist /tmp/"`{{execute T1}}
+
+Or build from https://github.com/dragonflyoss/console by nodejs
+
+`git clone https://github.com/dragonflyoss/console`{{execute T1}}
+
+```sh
+docker run --workdir=/build \
+        --rm -v /root/console/:/build node:12-alpine \
+        sh -c "npm install --loglevel warn --progress false && npm run build"
+```{{execute T1}}
+
+`cp -R /root/console/dist /opt/dragonfly/dist`{{execute T1}}
 
 ### Startup Dragonfly
 
@@ -70,3 +88,7 @@ root        4372    4370  0 00:36 pts/0    00:00:00 /opt/dragonfly/dfget daemon
 root        5099    5097  0 00:37 pts/0    00:00:00 /opt/dragonfly/scheduler
 root       13741    1146  0 00:39 pts/0    00:00:00 grep --color=auto dragonfly
 ```
+
+### Access Dragonfly Manager Console Web UI
+
+Click `Manager Console UI` dashboard or this link [Manager Console UI](https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com)
